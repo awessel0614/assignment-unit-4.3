@@ -3,9 +3,73 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 let basket = [];
 
-function addItem() {
-    basket.push('Kale');
+function addItem(item) {
+    basket.push(item);
+    if(basket[basket.length -1] === item) {
+        return true;
+    }
 }
+console.log(`Basket is ${basket}`);
+console.log('Adding broccoli (expect true):', addItem('Broccoli'));
+console.log(`Basket is now ${basket}`);
+console.log('Adding cake (expect true):', addItem(' Cake'));
+console.log(`Basket is now ${basket}`);
+console.log('Adding grapes (expect true):', addItem(' Grapes'));
+console.log(`Basket is now ${basket}`);
+console.log('Adding muffins (expect true):', addItem(' Muffins'));
+console.log(`Basket is now ${basket}`);
+
+
+
+
+
+//Creating a function listItems
+
+function listItems(item) {
+    for(let food of basket) {
+        console.log(food);
+    }
+}
+listItems(basket);
+
+
+
+
+
+function empty() {
+    while(basket.length > 0) {
+        basket.pop();
+    }
+    if (basket.length === 0) {
+        return true;
+    }
+}
+let otherOutcome = empty(basket);
+console.log('Is the basket empty now?', otherOutcome);
+
+
+
+//STRETCH GOALS
+
+const maxItems = 5;
+
+function isFull() {
+    if(basket.length < maxItems) {
+        return false;
+    } else {
+        return true;
+    }
+}
+let theResult = isFull();
+console.log(theResult);
+
+
+
+
+
+
+
+
 
 
 
