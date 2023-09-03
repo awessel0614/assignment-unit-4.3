@@ -50,33 +50,40 @@ console.log('Is the basket empty now?', otherOutcome);
 
 
 //STRETCH GOALS
-
 const maxItems = 5;
 
 function isFull() {
     if(basket.length < maxItems) {
-        return false;
-    } else {
-        return true;
-    }
+        return false; 
+    } 
+return true;
 }
+console.log('The number of items in the basket is: ', basket.length);
 let theResult = isFull();
-console.log(theResult);
+console.log('Is the basket full?', theResult);
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
+addItem('Cheese');
+addItem('Eggs');
+addItem('Ice Cream');
+addItem('Tomatoes');
+addItem('Bread');
+function removeItem(item) {
+   let index = basket.indexOf(item);
+   if (index === -1) {
+    return null;
+   } else {
+    let eliminatedItem = basket.splice(index, 1);
+    return eliminatedItem;
+   }
+}
+console.log('What is in the basket currently?', basket)
+let updatedCart = removeItem('Bread');
+console.log('The item removed from the cart is: ', updatedCart);
 
 
 
