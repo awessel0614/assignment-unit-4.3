@@ -2,35 +2,15 @@ console.log('***** Cart Functions *****');
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 
-
 let basket = [];
-const maxItems = 5;
-
 
 function addItem(item) {
     console.log('*in addItem*');
-    if(isFull() === true) {
-        console.log('Sorry! The basket is full.')
-        return false;
-    } else {
-    basket.push(item);
-    if(basket[basket.length -1] === item) {
-        return true;
-    }
-    }
-}
-
-
-// THE CODE BELOW WORKS. It's my original addItem function. I just commented it
-//out so I could try the stretch goal one.... which isn't working >:|
-/** function addItem(item) {
     basket.push(item);
     if(basket[basket.length -1] === item) {
         return true;
     }
 }
-*/
-
 console.log(`Basket is ${basket}`);
 console.log('Adding broccoli (expect true):', addItem('Broccoli'));
 console.log(`Basket is now ${basket}`);
@@ -44,6 +24,7 @@ console.log(`Basket is now ${basket}`);
 
 
 
+//Creating a function listItems
 
 function listItems(item) {
     console.log('*in listItems*');
@@ -51,9 +32,7 @@ function listItems(item) {
         console.log(food);
     }
 }
-console.log('Listing items in the basket: ');
 listItems(basket);
-
 
 
 
@@ -72,20 +51,21 @@ console.log('Is the basket empty now?', otherOutcome);
 
 
 
+
 //STRETCH GOALS
 
+const maxItems = 5;
 
 function isFull() {
     console.log('*in isFull*');
     if(basket.length < maxItems) {
         return false; 
     } 
-    return true;
+return true;
 }
 console.log('The number of items in the basket is: ', basket.length);
 let theResult = isFull();
 console.log('Is the basket full?', theResult);
-
 
 
 
@@ -124,22 +104,6 @@ console.log(basket);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // DO NOT MODIFY
 // Used for automated testing
 try {
@@ -155,4 +119,3 @@ try {
 } catch(e) {
     // Do nothing
 }
-
