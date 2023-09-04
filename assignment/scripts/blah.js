@@ -1,17 +1,30 @@
 console.log('***** Cart Functions *****');
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
-
-
 let basket = [];
 const maxItems = 5;
 
+function isFull() {
+    console.log('**using isFull function**');
+    if(basket.length < maxItems) {
+        return false; 
+    } 
+return true;
+}
+addItem('Cheese');
+addItem('Eggs');
+addItem('Ice Cream');
+addItem('Tomatoes');
+addItem('Bread');
+
+console.log('The number of items in the basket is: ', basket.length);
+let theResult = isFull();
+console.log('Is the basket full?', theResult);
 
 function addItem(item) {
-    console.log('*in addItem*');
     if(isFull() === true) {
         console.log('Sorry! The basket is full.')
-        return false;
+        return false
     } else {
     basket.push(item);
     if(basket[basket.length -1] === item) {
@@ -44,14 +57,13 @@ console.log(`Basket is now ${basket}`);
 
 
 
+//Creating a function listItems
 
 function listItems(item) {
-    console.log('*in listItems*');
     for(let food of basket) {
         console.log(food);
     }
 }
-console.log('Listing items in the basket: ');
 listItems(basket);
 
 
@@ -59,7 +71,6 @@ listItems(basket);
 
 
 function empty() {
-    console.log('*in empty*');
     while(basket.length > 0) {
         basket.pop();
     }
@@ -75,68 +86,26 @@ console.log('Is the basket empty now?', otherOutcome);
 //STRETCH GOALS
 
 
-function isFull() {
-    console.log('*in isFull*');
-    if(basket.length < maxItems) {
-        return false; 
-    } 
-    return true;
-}
-console.log('The number of items in the basket is: ', basket.length);
-let theResult = isFull();
-console.log('Is the basket full?', theResult);
-
-
-
-
-
-addItem('Cheese');
-addItem('Eggs');
-addItem('Ice Cream');
-addItem('Tomatoes');
-addItem('Bread');
 function removeItem(item) {
-    console.log('*in removeItem');
    let index = basket.indexOf(item);
    if (index === -1) {
     return null;
    } else {
     let eliminatedItem = basket.splice(index, 1);
-    let stringOfEliminatedItem = eliminatedItem.toString();
-    return stringOfEliminatedItem;
+    return eliminatedItem;
    }
 }
 console.log('What is in the basket currently?', basket)
-let updatedBasket = removeItem('Bread');
-console.log('The item removed from the basket is: ', updatedBasket);
-console.log(basket);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log('Adding an item to the cart: ', addItem('Cheese'));
+console.log('Adding an item to the cart: ', addItem('Eggs'));
+console.log('Adding an item to the cart: ', addItem('Ice Cream'));
+console.log('Adding an item to the cart: ', addItem('Tomatoes'));
+console.log('Adding an item to the cart: ', addItem('Bread'));
+console.log('Adding an item to the cart: ', addItem('Potatoes'));
+console.log('What is in the basket currently?', basket);
+let updatedCart = removeItem('Bread');
+console.log('The item removed from the cart is: ', updatedCart);
+console.log('What is in the basket currently?', basket);
 
 
 
@@ -155,4 +124,3 @@ try {
 } catch(e) {
     // Do nothing
 }
-
